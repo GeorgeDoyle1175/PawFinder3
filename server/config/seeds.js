@@ -169,7 +169,7 @@ db.once('open', async () => {
 
     {
       name: 'Stella',
-      breed: categories[3]._id,
+      category: categories[3]._id,
       sex: 'female',
       age: '16 weeks',
       image: 'stella.jpg',
@@ -179,7 +179,7 @@ db.once('open', async () => {
 
     {
       name: 'Sunshine',
-      breed: categories[3]._id,
+      category: categories[3]._id,
       sex: 'female',
       age: '12 weeks',
       image: 'sunshine.jpg',
@@ -189,7 +189,7 @@ db.once('open', async () => {
 
     {
       name: 'Princess',
-      breed: categories[3]._id,
+      category: categories[3]._id,
       sex: 'female',
       age: '19 weeks',
       image: 'princess.jfif',
@@ -199,7 +199,7 @@ db.once('open', async () => {
 
     {
       name: 'Chonks',
-      breed: categories[3]._id,
+      category: categories[3]._id,
       sex: 'male',
       age: '16 weeks',
       image: 'Chonks.jpeg',
@@ -209,7 +209,7 @@ db.once('open', async () => {
 
     {
       name: 'Gunther',
-      breed: categories[3]._id,
+      category: categories[3]._id,
       sex: 'male',
       age: '12 weeks',
       image: 'gunther.jpg',
