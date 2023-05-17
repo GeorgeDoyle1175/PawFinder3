@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -7,12 +7,39 @@ import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
-function ProductList() {
+function ProductList({ searchTerm }) {
   const [state, dispatch] = useStoreContext();
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const { currentCategory } = state;
+  const { currentCategory, products } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  const filterProducts = useCallback(() => {
+    let filtered = products;
+    if (currentCategory) {
+      filtered = filtered.filter(
+        (product) => product.category._id === currentCategory
+      );
+    }
+
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    setFilteredProducts(filtered);
+  }, [currentCategory, products, searchTerm]);
+
+  useEffect(() => {
+    if (searchTerm === "") {
+      setFilteredProducts([]);
+    } else {
+      filterProducts();
+    }
+  }, [searchTerm, filterProducts]);
 
   useEffect(() => {
     if (data) {
@@ -33,22 +60,12 @@ function ProductList() {
     }
   }, [data, loading, dispatch]);
 
-  function filterProducts() {
-    if (!currentCategory) {
-      return state.products;
-    }
-
-    return state.products.filter(
-      (product) => product.category._id === currentCategory
-    );
-  }
-
   return (
     <div className="my-2">
       <h2>Our Products:</h2>
-      {state.products.length ? (
+      {searchTerm !== "" && filteredProducts.length ? (
         <div className="flex-row">
-          {filterProducts().map((product) => (
+          {filteredProducts.map((product) => (
             <ProductItem
               key={product._id}
               _id={product._id}
@@ -59,9 +76,9 @@ function ProductList() {
             />
           ))}
         </div>
-      ) : (
-        <h3>You haven't added any products yet!</h3>
-      )}
+      ) : searchTerm !== "" ? (
+        <h3>No products found.</h3>
+      ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
   );
