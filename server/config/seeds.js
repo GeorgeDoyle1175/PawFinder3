@@ -17,8 +17,9 @@ db.once('open', async () => {
   await Product.deleteMany();
 
   const products = await Product.insertMany([
+
     {
-      name: 'Bella',
+      name: 'English Shepherd',
       category: categories[4]._id,
       sex: 'female',
       age: '3 months',
@@ -28,7 +29,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Max',
+      name: 'English Shepherd',
       category: categories[4]._id,
       sex: 'male',
       age: '6 months',
@@ -38,7 +39,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Lucy',
+      name: 'English Shepherd',
       category: categories[4]._id,
       sex: 'female',
       age: '6 months',
@@ -48,7 +49,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Cooper',
+      name: 'English Shepherd',
       category: categories[4]._id,
       sex: 'male',
       age: '9 months',
@@ -58,7 +59,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Daisy',
+      name: "English Shepherd",
       category: categories[4]._id,
       sex: 'emale',
       age: '7 months',
@@ -68,7 +69,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Cooper',
+      name: 'Golden Retriever',
       category: categories[1]._id,
       sex: 'male',
       age: '6 months',
@@ -78,7 +79,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Bentley',
+      name: 'Golden Retriever',
       category: categories[1]._id,
       sex: 'male',
       age: '3 months',
@@ -88,7 +89,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Max',
+      name: 'Golden Retriever',
       category: categories[1]._id,
       sex: 'male',
       age: '8 months',
@@ -98,7 +99,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Ruby',
+      name: 'Golden Retriever',
       category: categories[1]._id,
       sex: 'female',
       age: '12 months',
@@ -108,7 +109,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Kodi',
+      name: 'Golden Retriever',
       category: categories[1]._id,
       sex: 'male',
       age: '10 months',
@@ -118,7 +119,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Rocky',
+      name: 'French Bulldog',
       category: categories[2]._id,
       sex: 'male',
       age: '4 months',
@@ -128,7 +129,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Luna',
+      name: 'French Bulldog',
       category: categories[2]._id,
       sex: 'female',
       age: '3 months',
@@ -138,7 +139,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Max',
+      name: 'French Bulldog',
       category: categories[2]._id,
       sex: 'male',
       age: '7 months',
@@ -148,7 +149,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Bella',
+      name: 'French Bulldog',
       category: categories[2]._id,
       sex: 'female',
       age: '10 months',
@@ -158,7 +159,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Oscar',
+      name: 'French Bulldog',
       category: categories[2]._id,
       sex: 'male',
       age: '2.5 years',
@@ -168,7 +169,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Stella',
+      name: 'Maltipoos',
       category: categories[3]._id,
       sex: 'female',
       age: '16 weeks',
@@ -178,7 +179,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Sunshine',
+      name: 'Maltipoos',
       category: categories[3]._id,
       sex: 'female',
       age: '12 weeks',
@@ -188,7 +189,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Princess',
+      name: 'Maltipoos',
       category: categories[3]._id,
       sex: 'female',
       age: '19 weeks',
@@ -198,7 +199,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Chonks',
+      name: 'Maltipoos',
       category: categories[3]._id,
       sex: 'male',
       age: '16 weeks',
@@ -208,7 +209,7 @@ db.once('open', async () => {
     },
 
     {
-      name: 'Gunther',
+      name: 'Maltipoos',
       category: categories[3]._id,
       sex: 'male',
       age: '12 weeks',
