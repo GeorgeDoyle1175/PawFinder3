@@ -62,22 +62,24 @@ function ProductList({ searchTerm }) {
 
   return (
     <div className="my-2">
-      <h2>Our Products:</h2>
       {searchTerm !== "" && filteredProducts.length ? (
-        <div className="flex-row">
-          {filteredProducts.map((product) => (
-            <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              quantity={product.quantity}
-            />
-          ))}
+        <div>
+          <h2>Our Dogs:</h2>
+          <div className="flex-row">
+            {filteredProducts.map((product) => (
+              <ProductItem
+                key={product._id}
+                _id={product._id}
+                image={product.image}
+                name={product.name}
+                price={product.price}
+                quantity={product.quantity}
+              />
+            ))}
+          </div>
         </div>
       ) : searchTerm !== "" ? (
-        <h3>No products found.</h3>
+        <h3>No Dogs found.</h3>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>

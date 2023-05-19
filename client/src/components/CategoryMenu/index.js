@@ -14,7 +14,7 @@ function CategoryMenu({ handleCategorySelect }) {
 
   return (
     <div>
-      <h2>Choose a Category:</h2>
+      <h2>Choose a Breed:</h2>
       {categories.map((category) => (
         <button key={category.name} onClick={() => handleClick(category.name)}>
           {category.name}
